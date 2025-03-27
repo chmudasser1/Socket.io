@@ -8,7 +8,7 @@ const App = () => {
   const [roomname, setRoomName] = useState("")
   const [socketid, setSocketid] = useState("")
   const [massages, setMassages] = useState([])
-  const socket = useMemo((() => io('http://localhost:3000')), [])
+  const socket = useMemo((() => io('http://localhost:3000',{withCredentials:true})), [])
 
   const handlesubmit = (e) => {
     e.preventDefault();
